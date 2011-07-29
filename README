@@ -24,9 +24,6 @@ while true;
   sleep 1;
   curl   http://127.0.0.1:8080/v1/rest/browsertests/id2  -H"Content-Type: application/json"  -T json2.txt ;
   sleep 1;
-  curl   http://127.0.0.1:8080/v1/rest/browsertests/id2  -H"Content-Type: application/json"  -T json3.txt ;
-  sleep 1 ;
-  curl   http://127.0.0.1:8080/v1/rest/browsertests/id2  -H"Content-Type: application/json"  -T json4.txt ;
 done;
 
 

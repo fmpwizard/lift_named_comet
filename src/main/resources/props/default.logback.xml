@@ -12,7 +12,7 @@
     <logger name="code.comet" level="info"/>
     <logger name="code.lib" level="info"/>
 
-    <logger name="MySQL" level="warn"/>
+    <logger name="com.fmpwizard.cometactor.pertab" level="info"/>
     <root level="error">
         <appender-ref ref="STDOUT" />
     </root>

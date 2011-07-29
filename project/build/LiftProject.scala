@@ -5,9 +5,10 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
 
   //override def scanDirectories = Nil
 
-  val liftVersion = "2.3-SNAPSHOT"
+  val liftVersion = "2.4-SNAPSHOT"
   
-
+  lazy val JavaNet = "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
+  override def scanDirectories = Nil
   val scalaToolsSnapshots = "Scala-Tools Maven2 Snapshots Repository" at "http://scala-tools.org/repo-snapshots" 
 
   override def compileOptions = super.compileOptions ++ Seq(Unchecked)

@@ -16,7 +16,7 @@ object GridRenderHelper extends  Logger{
   def renderGrid(showingVersion: String, in: Box[List[Map[String,(String, String)]]]) = {
 
     val testResults= in
-    debug("In is %s".format(in))
+    info("In is %s and showingVersion is %s".format(in, showingVersion))
 
     case class Result(OS: String, pass: Boolean) {
       def clss = if (pass) "success" else "error"

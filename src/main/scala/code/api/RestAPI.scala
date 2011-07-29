@@ -11,10 +11,12 @@ import net.liftweb.json._
 import net.liftweb.actor._
 
 import model._
-import code.comet.MyListeners._
+
 
 import net.liftweb.http._
 import net.liftweb.util.Helpers
+
+import com.fmpwizard.cometactor.pertab.namedactor.CometListerner._
 
 case class CellToUpdate(colIndex: Int, rowName: String,
                         version: String, testResult: String, cellNotes: String)
@@ -81,7 +83,7 @@ object RestHelperAPI extends RestHelper with Logger {
            */
 
             debug(
-              "REST API will send an update to actor: %s: ".format(listenerFor(srvmgrVersion))
+              "REST API will send an update to actor: %s: ".format(listenerFor(Full(srvmgrVersion)))
             )
 
           /**
@@ -89,7 +91,7 @@ object RestHelperAPI extends RestHelper with Logger {
            * will send the CellToUpdate clas class to the comet actors that are
            * displaying info about the version we got json data for
            */
-            listenerFor(srvmgrVersion) match {
+            listenerFor(Full(srvmgrVersion)) match {
               case a: LiftActor => a ! CellToUpdate(
                 testName, browser, srvmgrVersion, testResult, cellNotes
               )
